@@ -1,0 +1,181 @@
+:root{
+    --dark-blue: #323452;
+    --dark-gray: #343434;
+    --light-blue: #5f55ee;
+    --bg-blue: #f2f1fe;
+    --pink: #ff3aad;
+
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  body{
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+  }
+  header{
+    width: 100%;
+    padding: .8rem 1.2rem;
+    background-color: var(--dark-blue);
+  }
+  .logo {
+    width: 25px;
+    height: 30px;
+  }
+  .logo img {
+    width: 100%;
+    height: 100%;
+  }
+  main{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  h1{
+    color: var(--pink);
+    font-weight: 700;
+    margin-bottom: .1rem;
+  }
+  .add-task{
+    width: 80%;
+    margin: .1rem auto;
+  }
+  form{
+    width: 100%;
+  }
+  label{
+    font-size: .8rem;
+  }
+  form input[type="text"], form input[type="date"], form select{
+    padding: .4rem .6rem;
+    border: solid 0.3px var(--dark-gray);
+    border-radius: 8px;
+    outline: none;
+  }
+  .due-date, .start-date, .progress, .priority{
+    width: 45%;
+  }
+  .task-argument{
+    display: flex;
+    flex-direction: column;
+    margin-top: .7rem;
+    margin-bottom: .2rem;
+  }
+  .task-content{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  textarea{
+    padding: .6rem;
+    border-radius: 8px;
+    height: 100px;
+    resize: none;
+    outline: none;
+  }
+
+  button{
+    margin-top: .2rem;
+    padding: .4rem 1.1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--light-blue);
+    color: var(--bg-blue);
+    cursor: pointer;
+  }
+  .btn:hover{
+    opacity: .8;
+    transition: all .2s;
+  }
+
+
+  @media (max-width: 1024px)	{
+    .add-task{
+      width: 65%  
+    }
+    h1{
+        font-size: 3.5rem;
+    }
+    label{
+        font-size: 1.2rem;
+    }
+      form input[type="text"], form input[type="date"], form select, form textarea{
+        margin-top: .3rem;
+        font-size: 1rem;
+        padding: .6rem;
+    }
+      .due-date, .start-date, .progress, .priority{
+        width: 48%;
+    }
+    .btns-container{
+        margin-top: .6rem;
+    }
+    .btn{
+        font-size: 1.2rem;
+        padding: .6rem 1.8rem;
+    }
+}
+
+
+@media (max-width: 568px){
+    .add-task{
+        width: 90%  
+      }
+      h1{
+          font-size: 2.1rem;
+      }
+      label{
+          font-size: 1rem;
+      }
+        form input[type="text"], form input[type="date"], form select, form textarea{
+          margin-top: .3rem;
+          font-size: 1rem;
+          padding: .6rem;
+      }
+      .btns-container{
+        width: 100%;
+        margin-top: 1.2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .btn{
+        width: 100%;
+          font-size: 1rem;
+          margin-top: 1rem;
+          padding: .6rem auto;
+      }
+}
+
+@media (max-width: 280px){
+    h1{
+        font-size: 1.7rem;
+    }
+    label{
+        font-size: 1rem;
+    }
+      form input[type="text"], form input[type="date"], form select, form textarea{
+        margin-top: .3rem;
+        font-size: .8rem;
+        padding: .6rem .4rem;
+    }
+    .btns-container{
+      margin-top: .9rem;
+    }
+    .btn{
+        font-size: .8rem;
+        margin-top: .8rem;
+        padding: .6rem auto;
+    }
+}

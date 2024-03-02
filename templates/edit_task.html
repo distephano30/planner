@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% comment %} font {% endcomment %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+{% comment %} css {% endcomment %}
+<link rel="stylesheet" href="{% static 'edit-task.css' %}">
+    <title>konbit</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{% static 'clickup.svg' %}" alt="">
+        </div>
+    </header>
+    <main>
+        <h1>Todo App</h1>
+        <div class="add-task">
+            <form name="taskForm" method="POST">
+                {% csrf_token %}
+                {% comment %} Task title {% endcomment %}
+                <div class="title task-argument">
+                    <label for="title">Title</label>
+                    {{ form.title }}
+                </div>
+                {% comment %} other task object {% endcomment %}
+                <div class="task-content">
+                    <div class="due-date task-argument">
+                        <label for="due-date">Due date</label>
+                        {{ form.due_date }}
+                    </div>
+                    <div class="start-date task-argument">
+                        <label for="start-date">Start Date</label>
+                        {{ form.start_date }}
+                    </div>
+                    <div class="progress task-argument">
+                        <label for="progress">Progress</label>
+                        {{ form.progress }}
+                    </div>
+                    <div class="priority task-argument">
+                        <label for="priority">Priority</label>
+                        {{ form.priority }}
+                    </div>
+                </div>
+
+                <div class="task-user">
+                    <label for="assign_to">Assign to</label>
+                    {{ form.assign_to }}
+                </div>
+                
+                {% comment %} taske description {% endcomment %}
+                <div class="task-description task-argument">
+                    <label for="description">Description</label>
+                    {{ form.description }}
+                </div>
+
+                {% comment %} btns {% endcomment %}
+                <div class="btns-container">
+                    <button class="btn" type="submit">Update</button>
+                    <button class="btn btn-cancel" type="reset" >Cancel</button>
+                </div>
+                
+            </form>
+        </div>
+       
+    </main>
+
+{% comment %} js file {% endcomment %}
+
+{% comment %} <script src="{% static 'todo.js' %}"></script> {% endcomment %}
+<script src="{% static 'edit.js' %}"></script>
+</body>
+</html>

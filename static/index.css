@@ -1,0 +1,320 @@
+:root{
+    --dark-blue: #323452;
+    --dark-gray: #343434;
+    --light-blue: #5f55ee;
+    --bg-blue: #f2f1fe;
+    --pink: #ff3aad;
+
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  body{
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+  }
+  header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .8rem 1.2rem;
+    background-color: var(--dark-blue);
+  }
+  .logo {
+    width: 25px;
+    height: 30px;
+  }
+  .logo img {
+    width: 100%;
+    height: 100%;
+  }
+  .user{
+    color: var(--bg-blue);
+  }
+  .login-link {
+    text-decoration: none;
+    color: var(--bg-blue);
+  }
+  main{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .h1{
+    font-size: 2rem;
+    color: var(--pink);
+    font-weight: 700;
+    margin: 1rem auto;
+  }
+  .add-task{
+    width: 80%;
+    margin: .1rem auto;
+    display: none;
+  }
+  form{
+    width: 100%;
+  }
+  label{
+    font-size: .8rem;
+  }
+  form input[type="text"], form input[type="date"], form select{
+    padding: .4rem .6rem;
+    border: solid 0.3px var(--dark-gray);
+    border-radius: 8px;
+    outline: none;
+  }
+  .due-date, .start-date, .progress, .priority{
+    width: 45%;
+  }
+  .task-argument{
+    display: flex;
+    flex-direction: column;
+    margin-top: .7rem;
+    margin-bottom: .2rem;
+  }
+  .task-content{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  textarea{
+    height: 100px;
+    border: 3px solid #cccccc;
+    border-radius: 8px;
+    resize: vertical;
+    outline: none;
+  }
+  .btn{
+    margin-top: .6rem;
+    padding: .4rem 1.1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--light-blue);
+    color: var(--bg-blue);
+    cursor: pointer;
+  }
+  .btn:hover, .btn-container a:hover{
+    opacity: .8;
+    transition: all .2s;
+  }
+  .btn-container a{
+    text-decoration: none;
+    font-size: .75rem;
+    margin-left: .6rem;
+  }
+/* Define the table style */
+.container-tasks{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.btn-create-task{
+  border: none;
+  font-weight: 300;
+  background-color: var(--bg-blue);
+  color: var(--pink);
+  font-size: .8rem;
+  letter-spacing: 1px;
+  padding: .2rem .4rem;
+  margin-bottom: .4rem;
+  border-radius: 4px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.btn-create-task:hover{
+  opacity: .6;
+  transition: all .2s;
+}
+.task-filter{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.task-filter span{
+  width: 33.33%;
+  font-weight: 500;
+  padding: .2rem 2.2rem;
+  border-right: solid .2px rgba(0, 0, 0, 0.1);
+  background-color: var(--bg-blue);
+  color: var(--dark-blue);
+  border-radius: 8px 8px 0 0;
+  cursor: pointer;
+  opacity: .3;
+}
+.btn-all{
+  opacity: 1;
+}
+
+.upcoming, .overdue{
+  display: none;
+}
+table {
+    border-collapse: collapse; /* Remove space between cells */
+    width: 100%; /* Make the table full-width */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  }
+.table-completed{
+   margin-top: 2rem;
+}
+.table-completed thead tr{
+  background-color: var(--bg-blue);
+  color: var(--dark-gray);
+  font-size: .9rem;
+}
+.tr-completed{
+  font-size: .7rem;
+  text-decoration-line: line-through;
+}
+  /* Define the table header style */
+  thead tr {
+    background-color: var(--pink); /* Set a green background */
+    color: #ffffff; /* Set a white text color */
+    text-align: left; /* Align text to the left */
+  }
+  
+  /* Define the table body style */
+  tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Set a light gray background for even rows */
+  }
+  
+  tbody tr:hover {
+    background-color: var(--bg-blue); /* Set a coral background for hovered rows */
+  }
+  
+  /* Define the table cell style */
+  td, th {
+    padding: .4rem; /* Add some padding */
+     /* Add a thin border */
+  }
+ td{
+    font-size: .8rem;
+  }
+  td a, td a:visited{
+    color: var(--dark-blue);
+    text-decoration: none;
+  }
+  
+  
+  
+
+  /* responsive design */
+
+
+  @media (max-width: 1024px)	{
+    .container-tasks{
+      width: 90%  
+    }
+    .due-date, .start-date, .progress, .priority{
+      width: 48%;
+  }
+   .table-col{
+    display: none;
+   }
+   .task-col{
+    column-span: all;
+   }
+   .h1{
+    font-size: 3.5rem;
+   }
+   .btn-create-task{
+    font-size: 1.1rem;
+   }
+   th{
+    font-size: 1.5rem;
+   }
+   td, .tr-completed{
+    font-size: 1.1rem;
+    padding: .7rem .4rem;
+   }
+
+
+   .add-task{
+    width: 65%;
+   }
+  }
+
+  @media (max-width: 568px)	{
+    .h1{
+      font-size: 2.2rem;
+     }
+     .btn-create-task{
+      font-size: 1rem;
+     }
+     th{
+      font-size: 1.2rem;
+     }
+     td, .tr-completed{
+      font-size: .9rem;
+      padding: .7rem .4rem;
+     }
+     .svg-container{
+      width: 30px;
+      height: 40px;
+     }
+     svg {
+      width: 80%;
+      height: 80%;
+     }
+
+
+     .add-task{
+      width: 90%;
+     }
+     .btn-container{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+     }
+     .btn{
+      width: 100%;
+     }
+     .btn-container a{
+      text-align: center;
+     }
+  }
+
+  @media (max-width: 280px){
+     .btn-create-task{
+      font-size: .8rem;
+     }
+     th{
+      font-size: 1rem;
+     }
+     td, .tr-completed{
+      font-size: .7rem;
+      padding: .5rem .4rem;
+     }
+     .h1{
+      font-size: 1.7rem;
+  }
+  label{
+      font-size: 1rem;
+  }
+    form input[type="text"], form input[type="date"], form select, form textarea{
+      margin-top: .3rem;
+      font-size: .8rem;
+      padding: .6rem .4rem;
+  }
+  .btns-container{
+    margin-top: .9rem;
+  }
+  .btn{
+      font-size: .8rem;
+      margin-top: .8rem;
+      padding: .6rem auto;
+  }
+}
