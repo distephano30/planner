@@ -64,10 +64,10 @@
                         {{ form.priority }}
                     </div>
                 </div>
-                <div class="task-user">
+                {% comment %} <div class="task-user">
                     <label for="assign_to">Assign to</label>
                     {{ form.assign_to }}
-                </div>
+                </div> {% endcomment %}
                 {% comment %} taske description {% endcomment %}
                 <div class="task-description task-argument">
                     <label for="description">Description</label>
@@ -96,7 +96,7 @@
                 </thead>
                 <tbody class="all_tasks">
                     
-                    {% for i in my_tasks  %}
+                    {% for i in list  %}
                         <tr>
                             <td> <a href="{% url 'edit_task' i.id %}"> {{ i.title }} </a>  </td>
                             <td class="table-col"> <a href="{% url 'edit_task' i.id %}"> {{ i.progress }} </a> </td>
